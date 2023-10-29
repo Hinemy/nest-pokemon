@@ -1,0 +1,13 @@
+#instancia de mongoDB
+ version: '3'
+
+ services: 
+  db: 
+      image: mongo:5
+      restart: always
+      ports: 
+        - 27017:27017 # puerto computador/ puerto contenedor
+      environment: 
+          MONGODB_DATABASE: nest-pokemon
+      volumes: #crea una carpeta una carpeta que conectamos con mongo
+        - ./mongo:/data/db
